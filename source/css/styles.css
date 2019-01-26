@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Source+Sans+Pro');
+
+:root {
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Source Sans Pro', sans-serif;
+    --color-primary: #ff7657;    
+    --color-secondary: #ffba5a;    
+    --color-foreground-dark: #665c84;    
+    --color-foreground-light: #fbeed7;
+    --color-font-dark: #494949;
+    --color-font-light: #faf6e9;
+    --media-width: 60vw;
+}
+
+html, body {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 2em 0em;
+    background-color: white;
+    font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-font-dark);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.grid-main {
+    grid-column: 3 / span 8;
+}
+
+/*** NavBar ***/
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.header-container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    background-color: var(--color-foreground-dark);
+    color: var(--color-font-light);
+}
+
+.header {
+    grid-column: 3 / span 8;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.header-img {
+    margin-right: auto;
+    width: 48px;
+    height: 48px; 
+    object-fit: contain;
+}
+
+.nav-bar {
+    justify-self: flex-end;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    background-color: var(--color-foreground-dark);
+    color: var(--color-foreground-light);
+    border: none;
+    padding: 0 1em;
+    font-size: 1em;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    color: var(--color-secondary);
+}
+
+/*** Description ***/
+.description-container {
+    margin: 3em 1em;
+}
+
+.description-title {
+    font-size: 2.2em;
+    font-weight: 900;
+    text-align: center;
+}
+
+.description {
+    text-align: justify;
+}
+
+/*** Media ***/
+.media {
+    display: block;
+    margin: 0 auto;
+    width: var(--media-width);
+    height: calc(var(--media-width) * 0.5625);
+}
+
+/*** Contact Styles ***/
+.contact {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 3em auto;
+}
+
+.contact-email {
+    padding: 0.7em;
+    border: 1px solid var(--color-font-dark);
+    border-radius: 4px;
+    outline: none;
+}
+
+.contact-email:focus {
+    border: 1px solid var(--color-foreground-dark);
+}
+
+.contact-button {
+    background-color: var(--color-primary);
+    color: var(--color-foreground-light);
+    font-size: 1em;
+    font-weight: 800;
+    padding: 0.4em;
+    margin: 0.4em 0em;    
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+}
+
+/*** Features Styles ***/
+.features-main-container {
+    width: 60%;
+    margin: 3em auto;
+}
+
+.feature-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-content: center;
+    margin: 0.5em auto;
+}
+
+.feature-icon {
+    margin-right: auto;
+    font-size: 2em;
+    align-self: center;
+}
+
+.feature-description {
+    flex-basis: 80%;
+}
+
+.feature-description > h2 {
+    margin: 0;
+    padding: 0;
+}
+
+.feature-description > p {
+    margin: 0;
+    padding: 0.3em 0 0 0;
+}
+
+/*** Pricing Styles ***/
+.pricing-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 3em auto;
+}
+
+.pricing-card {
+    padding: 1em;
+}
+
+.pricing-option {
+    background-color: var(--color-foreground-dark);
+    color: var(--color-font-light);
+    margin: 0;
+    padding: 0.4em;
+    border-radius: 8px 8px 0px 0px;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.pricing-price {
+    background-color: var(--color-secondary);
+    color: var(--color-font-dark);
+    margin: 0;
+    padding: 0.4em;
+    border-radius: 0px 0px 8px 8px;
+    font-size: 1em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.pricing-description {
+    font-size: 1.1em;
+    font-weight: 400;
+    text-align: justify;
+}
+
+.pricing-button {
+    background-color: var(--color-primary);
+    color: var(--color-foreground-light);
+    width: 100%;
+    padding: 0.4em;
+    border-radius: 4px;
+    border: none;
+    font-size: 1.1em;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.pricing-button:hover {
+    background-color: var(--color-secondary);
+}
+
+/*** Media Query ***/
+@media (max-width: 720px) {
+    .pricing-container {
+        flex-direction: column;
+    }
+
+    .header {
+        grid-column: 1 / span 12;
+    }
+
+    .grid-main {
+        grid-column: 1 / span 12;
+    }
+
+    .description-container {
+        margin: 1em;
+    }
+
+    .description-title {
+        font-size: 1.2em;
+    }
+    
+    .description {
+        font-size: .8em;
+    }
+
+    .features-main-container {
+        width: 70%;
+    }
+
+    .feature-description {
+        flex-basis: 60%;
+    }
+    .feature-description > h2 {
+        font-size: .9em;
+    }
+    
+    .feature-description > p {
+        font-size: .8em;
+    }
+}
+
